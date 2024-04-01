@@ -1,0 +1,22 @@
+{
+  "name": "file-upload-ocr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "migrate": "cd api && python3 manage.py migrate",
+    "install:api": "cd api && pip3 install -r requirements.txt",
+    "install:app": "cd app && npm install",
+    "install": "concurrently \"npm run install:api\" \"npm run install:app\"",
+    "dev:api": "cd api && python3 manage.py runserver",
+    "dev:app": "cd app && npm run dev",
+    "start": "concurrently \"npm run dev:api\" \"npm run dev:app\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
